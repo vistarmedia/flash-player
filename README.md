@@ -39,3 +39,12 @@ parameter named custom set to CUSTOM_FIELD. If any of this information is missin
   </object>
 </html>
 ```
+
+###Building
+Download and Install [Haxe](http://haxe.org) and build:
+
+```bash
+haxe build.hxml
+```
+
+The SWF will be found in ./out/
