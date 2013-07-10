@@ -1,0 +1,8 @@
+-cp src
+-swf out/vistar_player-0.6.0.swf
+-lib unject
+-lib hxJson2
+-swf-header 1280:720:60:000000
+-resource build@build
+--no-traces
+-main player.Main

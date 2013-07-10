@@ -1,0 +1,9 @@
+-cp src
+-cp test
+-lib unject
+-lib hxJson2
+-debug
+-resource build@build
+-swf-header 1280:720:60:ffffff
+-swf out/vistar_test-0.6.0.swf
+-main player.Tests

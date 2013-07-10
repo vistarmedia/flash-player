@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Flash Player Test</title>
+  </head>
+  <script type="text/javascript">
+    var coolsignTable = {
+      network_id:   "cs-network-id",
+      api_key:      "cs-api-key",
+      device_id:    "cs-device-id"
+    }
+
+    function onSuccess() {
+      $('#log').css('background', '#9e9');
+    }
+    function onFailure() {
+      $('#log').css('background', '#e99');
+    }
+
+    function log(msg) {
+      $("<span>").text(msg).appendTo('#log');
+    }
+
+    function GetAttribute(name) {
+      return coolsignTable[name];
+    }
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <style type="text/css">
+    #log {
+      white-space:  pre;
+      background:   #eee;
+      font-family:  monospace;
+    }
+    .clear {
+      clear:        both;
+    }
+  </style>
+  <body>
+  <div id="log"></div>
+  <div class="clear"></div>
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+          width="500"
+          height="501"
+          id="flash-player">
+    <param name="movie" value="out/vistar_test-0.6.0.swf"/>
+    <param name="allowScriptAccess" value="always" />
+    <param name="quality" value="high" />
+    <param name="scale" value="noscale" />
+    <param name="salign" value="lt" />
+    <param name="bgcolor" value="#ffffff"/>
+    <embed src="out/vistar_test-0.6.0.swf"
+           bgcolor="#ffffff"
+           width="500"
+           height="501"
+           name="flash-player"
+           quality="high"
+           allowScriptAccess="always"
+           allowscriptaccess="always"
+           FlashVars="network_id=flashvar-network_id&api_key=flashvar-api_key&device_id=flashvar-device_id&extraParam1=one&extraParam2=two"
+           type="application/x-shockwave-flash"
+           pluginspage="http://www.macromedia.com/go/getflashplayer"
+           />
+  </object>
+</html>
