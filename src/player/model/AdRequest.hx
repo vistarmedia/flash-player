@@ -8,19 +8,17 @@ class AdRequest {
   private var apiKey: String;
   private var deviceId: String;
   private var displayTime: Date;
-  private var numberOfScreens: Int;
   private var deviceAttributes: Hash<String>;
   private var displayArea: DisplayArea;
 
   public function new(networkId: String, apiKey: String, deviceId: String,
-                      displayTime: Date, numberOfScreens: Int,
+                      displayTime: Date,
                       deviceAttributes: Hash<String>,
                       displayArea: DisplayArea) {
     this.networkId = networkId;
     this.apiKey = apiKey;
     this.deviceId = deviceId;
     this.displayTime = displayTime;
-    this.numberOfScreens = numberOfScreens;
     this.deviceAttributes = deviceAttributes;
     this.displayArea = displayArea;
   }
@@ -43,7 +41,6 @@ class AdRequest {
     simple.set("device_id",           deviceId);
     simple.set("display_time",        displayTime);
     simple.set("direct_connection",   true);
-    simple.set("number_of_screens",   numberOfScreens);
     simple.set("device_attribute",    deviceAttributes);
     simple.set("display_area",        displayArea.toSimple());
 

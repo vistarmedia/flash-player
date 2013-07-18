@@ -33,7 +33,6 @@ class ApiController implements Infos {
       credentials.getApiKey(),
       this.deviceId,
       Date.now(),
-      1,
       this.deviceAttributes,
       this.displayArea);
 
