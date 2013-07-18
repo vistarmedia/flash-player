@@ -24,10 +24,9 @@ class ApiTest extends TestCase, implements Infos {
     deviceAttributes.set("friends", "bob");
 
     var displayTime = Date.now();
-    var numberOfScreens = 1;
 
     var adRequest = new AdRequest("my-network-id", "my-api-key", "my-device-id",
-      displayTime, numberOfScreens, deviceAttributes, displayArea);
+      displayTime, deviceAttributes, displayArea);
 
     transport.setResponse(200, "{\"advertisement\":[]}");
     var self = this;

@@ -54,7 +54,6 @@ class ApiControllerTest extends TestCase {
     this.assertEquals("flashvar-network_id",  req.network_id);
     this.assertEquals("flashvar-api_key",     req.api_key);
     this.assertEquals("flashvar-device_id",   req.device_id);
-    this.assertEquals(1, req.number_of_screens);
     this.assertTrue(req.direct_connection);
 
     this.assertTrue(displayArea != null);
