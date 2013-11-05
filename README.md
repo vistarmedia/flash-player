@@ -41,7 +41,7 @@ parameter named custom set to CUSTOM_FIELD. If any of this information is missin
 ```
 
 ###Building
-Download and Install [Haxe](http://haxe.org) and build:
+Download and Install [Haxe](http://haxe.org) (version 2) and build:
 
 ```bash
 haxe build.hxml
