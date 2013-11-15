@@ -46,6 +46,7 @@ class VideoMedia implements Media {
     var scale = if(scaleX > scaleY) scaleY else scaleX;
     video.width  *= scale;
     video.height *= scale;
+    hasResized = true;
   }
 
   public function isLoaded() {
@@ -77,8 +78,10 @@ class VideoMedia implements Media {
   }
 
   private function onMetaData(info: Dynamic) {
-    video.width  = info.width;
-    video.height = info.height;
+    if(!loaded) {
+      video.width  = info.width;
+      video.height = info.height;
+    }
     loaded = true;
   }
 }
