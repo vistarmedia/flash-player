@@ -31,7 +31,6 @@ class PlayerModule extends UnjectModule {
     supportedMedia.push("image/gif");
     supportedMedia.push("image/png");
     supportedMedia.push("video/x-flv");
-    supportedMedia.push("video/mp4");
 
     this.loaderParams = loaderParams;
   }
