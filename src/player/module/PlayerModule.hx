@@ -30,7 +30,7 @@ class PlayerModule extends UnjectModule {
     supportedMedia.push("image/jpeg");
     supportedMedia.push("image/gif");
     supportedMedia.push("image/png");
-    supportedMedia.push("video/x-flv");
+    supportedMedia.push("video/x-flv;vp6f");
 
     this.loaderParams = loaderParams;
   }

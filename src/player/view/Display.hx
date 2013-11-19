@@ -58,7 +58,6 @@ class Display implements Infos {
     var start    = Date.now().getTime();
 
     var finish = function() {
-      ad.complete();
       self.movieClip.removeChild(display);
       media.rewind();
       media.stop();
@@ -76,7 +75,11 @@ class Display implements Infos {
     movieClip.addChild(display);
     media.play();
     var timeout = duration * 1000;
-    haxe.Timer.delay(finish, timeout - 1000);
+
+    haxe.Timer.delay(function() {
+      ad.complete();
+    }, Std.int(timeout * 0.75));
+    haxe.Timer.delay(finish, timeout);
   }
 
   private function handleNoAd() {
