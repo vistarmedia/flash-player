@@ -36,13 +36,16 @@ class AdRequest {
       deviceAttributes.add(entry);
     }
 
+    var displayAreas = new Array<Dynamic>();
+    displayAreas.push(displayArea.toSimple());
+
     simple.set("network_id",          networkId);
     simple.set("api_key",             apiKey);
     simple.set("device_id",           deviceId);
     simple.set("display_time",        displayTime);
     simple.set("direct_connection",   true);
     simple.set("device_attribute",    deviceAttributes);
-    simple.set("display_area",        displayArea.toSimple());
+    simple.set("display_area",        displayAreas);
 
     return simple;
   }
