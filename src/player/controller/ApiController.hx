@@ -17,6 +17,8 @@ class ApiController implements Infos {
   private var displayArea: DisplayArea;
   private var deviceId: String;
   private var deviceAttributes: Hash<String>;
+  private var longitude: Float;
+  private var latitude: Float;
 
   public function new(api: Api, credentials: Credentials, device: Device,
                       displayArea: DisplayArea) {
@@ -25,6 +27,8 @@ class ApiController implements Infos {
     this.displayArea = displayArea;
     this.deviceId = device.getDeviceId();
     this.deviceAttributes = device.getAttributes();
+    this.longitude = device.getLongitude();
+    this.latitude = device.getLatitude();
   }
 
   public function getAds(handler: Advertisement->Void) {
@@ -34,7 +38,9 @@ class ApiController implements Infos {
       this.deviceId,
       Date.now(),
       this.deviceAttributes,
-      this.displayArea);
+      this.displayArea,
+      this.longitude,
+      this.latitude);
 
     var self = this;
     api.getAd(request, function(response: AdResponse) {

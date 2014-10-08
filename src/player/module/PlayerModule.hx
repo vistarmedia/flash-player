@@ -48,6 +48,12 @@ class PlayerModule extends UnjectModule {
     var allowAudio = true;
     var displayAttributes = new Hash<String>();
 
+    var longitude: Float = if(loaderParams.longitude == null) 0.0
+                           else Std.parseFloat(loaderParams.longitude);
+
+    var latitude: Float = if(loaderParams.latitude == null) 0
+                          else Std.parseFloat(loaderParams.latitude);
+
     displayAttributes.set("build", getBuildNumber());
 
     var fields = Reflect.fields(this.loaderParams);
@@ -98,6 +104,8 @@ class PlayerModule extends UnjectModule {
     bind(Device).toSelf()
       .withParameter("deviceId",    deviceId)
       .withParameter("attributes",  displayAttributes)
+      .withParameter("longitude",   longitude)
+      .withParameter("latitude",    latitude)
       .inSingletonScope();
 
     bind(DisplayArea).toSelf()
